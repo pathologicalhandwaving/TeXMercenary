@@ -1,0 +1,102 @@
+%%% MasterTeX
+%%% The generic math work package
+%%% -----------------------------
+%%% Author:     EmD
+%%% URL:        
+%%% License:    CC0
+%%% Date:       2017-06-05
+%%% Version:    1.0.0
+%%% -----------------------------
+
+
+%%% BEGIN PACKAGE
+\ProvidesPackage{mastertex}
+%%% -----------------------------
+
+
+%%% ENCODING
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+%%%
+
+
+
+%%% MACRO SUBPACKAGES
+\RequirePackage{redundancy}
+%%% -----------------------------
+
+
+
+
+
+
+
+
+%%% PAGE SETUP
+\RequirePackage{import}
+\RequirePackage{subfiles}
+%%%
+
+
+\RequirePackage{xparse}
+\RequirePackage{ifthen}
+
+
+%% GRAPHICS
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{microtype}
+%%
+
+%%% DOCUMENT TASKS
+\RequirePackage[colorinlistoftodos]{todonotes}
+%%%
+
+
+
+
+
+
+%% HEADFOOT
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\addtolength{\headwidth}{\marginparsep}
+\addtolength{\headwidth}{\marginparwidth}
+
+
+
+\fancyhf{}
+\chead{\title}
+\lhead[LO]{\textit{\today}}
+\rhead[RE]{\textbf{\author}}
+\fancypagestyle{plain}{%
+	\fancyhead{}
+	\renewcommand{headrulewidth}{0.4pt}
+}
+%%%
+
+%% CLEVERREF AND HYPERREF
+\RequirePackage{cleveref}
+\RequirePackage{hyperref}
+\hypersetup{%
+  backref,
+  pagebackref=true,
+  draft=true,
+  colorlinks=false,
+  hyperfigures=true,
+  hyperindex=true,
+  hyperfootnotes=true,
+  linktocpage=true,
+  linkcolor=red,
+  anchorcolor=black,
+  citecolor=green.
+  filecolor=cyan,
+  menucolor=red,
+  urlcolor=magenta,
+  pdftitle={TeXMercenary},
+  pdfauthor={EmD},
+  pdfsubject={Mathematics},
+  pdfkeywords={mathematics,notes},
+}
+%%%

@@ -1,0 +1,52 @@
+\ProvidesPackage{redundancy}
+
+
+\RequirePackage{gitinfo2}
+\RequirePackage{mversion}
+\RequirePackage{fileinfo}
+
+%% mversion
+\def\parseline#1;#2 % This space is important
+{
+  \def\versionnumber{#1}
+  \def\buildnumber{#1}
+}
+\IfFileExists{version.dat}{}
+{
+  \newwrite\outfile
+  \immediate\openout\outfile=version.dat
+  \immediate\write\outfile{0.0.0}
+  \immediate\closeout\outfile
+}
+\newread\versionfile
+\openin\versionfile=version.dat
+\read\versionfile to \versionline
+\closein\versionfile
+\expandafter\parseline\versionline
+
+\setcounter{buildcounter}
+\setcounter{buildcountet}{\buildnumber}
+
+\newcommand{\version}{\versionnumber, \thebuildcounter}
+\newcommand{\setVersion}[1]{%
+  \newwrite\outfile
+  \immediate\openout\outfile=version.dat
+  \immediate\write\outfile{#1;\thebuildcounter
+  \immediate\closeout\outfile
+  \newread\versionfile
+  \openin\versionfile=version.dat
+  \read\versionfile to \versionline
+  \expandafter\parseline\versionline
+  \closein\versionfile
+}
+
+\newcommand{\increasebuild}{%
+  \stepcounter{buildcounter}
+}
+\newcommand{\increasebuild}{%
+  \stepcounter{buildcounter}
+  \newwrite\outfile
+  \immediate\openout\outfile=version.dat
+  \immediate\write\outfile{\versionnumber;\thebuildcounter}
+  \immediate\closeout\outfile
+}
