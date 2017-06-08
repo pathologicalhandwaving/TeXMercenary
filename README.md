@@ -1,9 +1,17 @@
 # TeXMercenary
 
-A LaTeX package built for  for most day to day math and non-math related tasks.
+A package of utilites built for most day-to-day tasks of math people.
+
+**Operating System:**
+
+Developed and Tested using OS X El Capitan
 
 ## WARNING
 
 **Project in early-development!**
 
-**DO USE!!**
+**DO NOT USE!!**
+
+## Requirements
+
+
