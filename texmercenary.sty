@@ -29,6 +29,16 @@
 
 
 
+%% MATH
+\RequirePackage{mathtools}
+\RequirePackage{empheq}
+\RequirePackage[amsmath,thmmarks,hyperref,framed,thref]{ntheorem}
+\RequirePackage{amssymb}
+\RequirePackage{stmaryrd}
+
+\RequirePackage{fixmath}
+\RequirePackage{nicefrac}
+%% MATH
 
 
 
@@ -62,42 +72,45 @@
 %% HEADFOOT
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
-\addtolength{\headwidth}{\marginparsep}
-\addtolength{\headwidth}{\marginparwidth}
+\setlength{\headheight}{15.2pt}
+\setlength{\headsep}{0.4in}
+\fancyhead{}
+\chead{\Large GRE Review Notes}
+\lhead{\Large\texttt{\today}}
+\rhead{\normalsize\emph{Calculus} }
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
 
 
+%%% FOOTNOTES UNDER FOOTRULE
+\makeatletter
+\renewcommand\footnoterule{%
+  \kern23\p@
+  \hrule\@width\linewidth
+  \kern2.6\p@}
+\makeatother 
 
-\fancyhf{}
-\chead{\title}
-\lhead[LO]{\textit{\today}}
-\rhead[RE]{\textbf{\author}}
-\fancypagestyle{plain}{%
-	\fancyhead{}
-	\renewcommand{headrulewidth}{0.4pt}
-}
-%%%
+%%% ENDHEADER
+
+
 
 %% CLEVERREF AND HYPERREF
 \RequirePackage{cleveref}
+\RequirePackage{url}
 \RequirePackage{hyperref}
 \hypersetup{%
-  backref,
-  pagebackref=true,
-  draft=true,
-  colorlinks=false,
-  hyperfigures=true,
-  hyperindex=true,
-  hyperfootnotes=true,
-  linktocpage=true,
-  linkcolor=red,
-  anchorcolor=black,
-  citecolor=green.
-  filecolor=cyan,
-  menucolor=red,
-  urlcolor=magenta,
-  pdftitle={TeXMercenary},
-  pdfauthor={EmD},
-  pdfsubject={Mathematics},
-  pdfkeywords={mathematics,notes},
+  	backref,
+	hyperfootnotes=false,
+    colorlinks=true,
+    linkcolor=blue,
+    anchorcolor=black,
+    citecolor=green,
+    linktocpage=true,
+    filecolor=magenta,
+    urlcolor=cyan,
+  	pdftitle={TeXMercenary},
+  	pdfauthor={EmD},
+  	pdfsubject={Mathematics},
+  	pdfkeywords={mathematics,notes},
 }
 %%%

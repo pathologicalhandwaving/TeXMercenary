@@ -2,16 +2,89 @@
 
 
 
+%%% MATH FONTS
+\newcommand{\mb}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\cb}[1]{\ensuremath{\mathcal{#1}}}
+\newcommand{\fr}[1]{\ensuremath{\mathfrak{#1}}}
+\newcommand{\rb}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\ib}[1]{\ensuremath{\mathit{#1}}}
+\newcommand{\fb}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\se}[1]{\ensuremath{\mathsf{#1}}}
+\newcommand{\tb}[1]{\ensuremath{\mathtt{#1}}}
 
 
-%% MATH
-\RequirePackage{mathtools}
-\RequirePackage{empheq}
-\RequirePackage[amsmath,thmmarks,hyperref,framed,thref]{ntheorem}
-\RequirePackage{amssymb}
-\RequirePackage{stmaryrd}
 
-\RequirePackage{fixmath}
-\RequirePackage{nicefrac}
-%% MATH
 
+
+%%% ntheorem MACROS
+
+\theoremstyle{marginbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremsymbol{\ensuremath{\diamondsuit}}
+\theoremseparator{:}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{changebreak}
+\theoremsymbol{\ensuremath{\heartsuit}}
+\theoremindent0.5cm
+\theoremnumbering{greek}
+\newtheorem{lemma}{Lemma}
+
+\theoremindent0cm \theoremsymbol{\ensuremath{\spadesuit}}
+\theoremnumbering{arabic}
+\newtheorem{corollary}[theorem]{Corollary}
+
+
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\theoremprework{\bigskip\hrule}
+\theorempostwork{\hrule\bigskip}
+\newtheorem{definition}{Definition}
+
+\theoremheaderfont{\sc\bfseries}\theorembodyfont{\slshape} \theoremstyle{nonumberbreak}
+\theoremseparator{.}
+\theoremsymbol{\rule{1ex}{1ex}}
+\newtheorem{proof}{Proof}
+
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\sc\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{:}
+\newtheorem{note}{Note}
+
+\theoremstyle{nonumberbreak}
+\theoremsymbol{\ensuremath{\odot}}
+\theoremheaderfont{\sc\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{problem}{Problem}
+
+\theoremstyle{nonumberbreak}
+\theoremsymbol{\ensuremath{\circledcirc}}
+\theoremindent0.5cm
+\theoremheaderfont{\small\sc\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{solution}{Solution}
+
+\theoremstyle{marginbreak}
+\theoremsymbol{\ensuremath{\dagger}}
+\theoremheaderfont{\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{!}
+\newtheorem*{pst}{PST}
+
+\theoremstyle{nonumberbreak}
+\theoremsymbol{\ensuremath{\star}}
+\theoremindent0.5cm
+\theoremheaderfont{\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Example}
+
+
+%%% OTHER MACROS
+\newcommand{\isit}{\stackrel{?}{=}}
+
+\newcommand{\aseq}[1]{\ensuremath{a_{1}r^{1},a_{1}r^{2},\ldots,a_{1}r^{#1-1}, a_{1}r^{#1}}}
