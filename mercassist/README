@@ -1,0 +1,10 @@
+# ReadMe: mercassist
+
+Vim plugin for TeXMercenary
+
+## Requirements
+
+* [UltiSnips](https://github.com/SirVer/ultisnips)
+* [Abolish]()
+* [Supertab]()
+* Willingness to edit your precious vimrc
