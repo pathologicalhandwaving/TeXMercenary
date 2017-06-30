@@ -1,16 +1,24 @@
 \ProvidesPackage{norbert}
 
+%% MATH
+%\RequirePackage{mathtools}
+%\RequirePackage[ntheorem]{empheq}
+\RequirePackage[standard]{ntheorem}
+
+\RequirePackage{fixmath}
+\RequirePackage{nicefrac}
+%% MATH
+
+
 
 
 %%% MATH FONTS
-\newcommand{\mb}[1]{\ensuremath{\mathbb{#1}}}
-\newcommand{\cb}[1]{\ensuremath{\mathcal{#1}}}
-\newcommand{\fr}[1]{\ensuremath{\mathfrak{#1}}}
-\newcommand{\rb}[1]{\ensuremath{\mathrm{#1}}}
-\newcommand{\ib}[1]{\ensuremath{\mathit{#1}}}
-\newcommand{\fb}[1]{\ensuremath{\mathbf{#1}}}
-\newcommand{\se}[1]{\ensuremath{\mathsf{#1}}}
-\newcommand{\tb}[1]{\ensuremath{\mathtt{#1}}}
+\newcommand{\bb}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\cc}[1]{\ensuremath{\mathcal{#1}}}
+\newcommand{\rr}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\ii}[1]{\ensuremath{\mathit{#1}}}
+\newcommand{\ff}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\tt}[1]{\ensuremath{\mathtt{#1}}}
 
 
 
@@ -18,35 +26,126 @@
 
 %%% ntheorem MACROS
 
+% theorem
 \theoremstyle{marginbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theorembodyfont{\slshape}
-\theoremsymbol{\ensuremath{\diamondsuit}}
-\theoremseparator{:}
+\theoremseparator{.}
 \newtheorem{theorem}{Theorem}
 
+% lemma
 \theoremstyle{changebreak}
-\theoremsymbol{\ensuremath{\heartsuit}}
 \theoremindent0.5cm
 \theoremnumbering{greek}
 \newtheorem{lemma}{Lemma}
 
-\theoremindent0cm \theoremsymbol{\ensuremath{\spadesuit}}
-\theoremnumbering{arabic}
+% corollary
+\theoremindent0cm 
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
 \newtheorem{corollary}[theorem]{Corollary}
 
-
-\theoremstyle{plain}
-\theoremsymbol{\ensuremath{\clubsuit}}
+% proposition
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
 \theoremseparator{.}
-\theoremprework{\bigskip\hrule}
-\theorempostwork{\hrule\bigskip}
+\newtheorem{proposition}{Proposition}
+
+% conjecture
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{conjecture}{Conjecture}
+
+% criterion
+\theoremstyle{marginbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{criterion}{Criterion}
+
+% assertion
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{assertion}{Assertion}
+
+
+% definition
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
 \newtheorem{definition}{Definition}
 
-\theoremheaderfont{\sc\bfseries}\theorembodyfont{\slshape} \theoremstyle{nonumberbreak}
+% condition
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
-\theoremsymbol{\rule{1ex}{1ex}}
-\newtheorem{proof}{Proof}
+\newtheorem{condition}{Condition}
+
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{question}{Question}
+
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{axiom}{Axiom}
+
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{property}{Property}
+
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{assumption}{Assumption}
+
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{hypothesis}{Hypothesis}
+
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{algorithm}{Algorithm}
+
+\theoremstyle{marginbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{problem}{Problem}
+
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Example}
+
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{remark}{Remark}
+
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
+\theoremseparator{.}
+\newtheorem{notation}{Notation}
 
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\sc\bfseries}
@@ -54,12 +153,32 @@
 \theoremseparator{:}
 \newtheorem{note}{Note}
 
-\theoremstyle{nonumberbreak}
-\theoremsymbol{\ensuremath{\odot}}
-\theoremheaderfont{\sc\bfseries}
-\theorembodyfont{\slshape}
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
-\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{summary}{Summary}
+
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{acknowledgement}{Acknowledgement}
+
+
+\theoremstyle{marginbreak}
+\theoremindent0.5cm
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{case}{Case}
+
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{conclusion}{Conclusion}
 
 \theoremstyle{nonumberbreak}
 \theoremsymbol{\ensuremath{\circledcirc}}
@@ -69,6 +188,7 @@
 \theoremseparator{.}
 \newtheorem{solution}{Solution}
 
+
 \theoremstyle{marginbreak}
 \theoremsymbol{\ensuremath{\dagger}}
 \theoremheaderfont{\bfseries}
@@ -76,15 +196,18 @@
 \theoremseparator{!}
 \newtheorem*{pst}{PST}
 
-\theoremstyle{nonumberbreak}
-\theoremsymbol{\ensuremath{\star}}
-\theoremindent0.5cm
-\theoremheaderfont{\bfseries}
-\theoremseparator{.}
-\newtheorem{example}{Example}
 
+
+\theoremheaderfont{\sc\bfseries}\theorembodyfont{\slshape} \theoremstyle{nonumberbreak}
+\theoremseparator{.}
+\theoremsymbol{\rule{1ex}{1ex}}
+\newtheorem{proof}{Proof}
 
 %%% OTHER MACROS
+
 \newcommand{\isit}{\stackrel{?}{=}}
 
 \newcommand{\aseq}[1]{\ensuremath{a_{1}r^{1},a_{1}r^{2},\ldots,a_{1}r^{#1-1}, a_{1}r^{#1}}}
+
+\newcommand{\contra}{\ensuremath{\lightning}}
+

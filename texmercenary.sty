@@ -1,12 +1,12 @@
 %%% TeXMercenary
-%%% A set of shell scripsts, a Vim plugin, and a LaTeX package
-%%% for the everyday uses of math people
+%%% A Modular LaTeX Package
+%%% for the Everyday uses of Math People
 %%% -----------------------------
 %%% Author:     PathologicalHandwaving
 %%% URL:        https://github.com/pathologicalhandwaving/texmercenary
 %%% License:    WTFPL
-%%% Date:       2017-06-05
-%%% Version:    1.0.0
+%%% Date:       2017-06-30
+%%% Version:    1.5.7
 %%% -----------------------------
 
 
@@ -15,36 +15,34 @@
 %%% -----------------------------
 
 
-%%% ENCODING
+%%% ENCODING and FONTS
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+\RequirePackage{fontawesome}
+\RequirePackage{stmaryrd} 			%% For the lightning
+
+
 %%%
 
+%%% TEXT LAYOUT TWEAKING
+\RequirePackage[none]{hyphenat} 		%% Because screw hyphens
+\RequirePackage[parfill]{parskip} 	%% Indent when I say so not whenever you want
+\RequirePackage{fullpage}			%% Save trees
+\RequirePackage{enumitem} 			%% Defaults are way too wide
+\setlist{nosep}
 
 
-%%% MACRO SUBPACKAGES
-\RequirePackage{redundancy}
-\RequirePackage{norbert}
+
+%%% SUBPACKAGES
+\RequirePackage{decapitated} 		%% HEADER & FOOTER
+%\RequirePackage{redundancy} 		%% IN DEVELOPMENT DO NOT LOAD%% VERSIONING SUPPORT
+\RequirePackage{norbert} 			%% MATH SUBPACKAGE
+\RequirePackage{hyperactive} 		%% MUST LOAD LAST!!!
 %%% -----------------------------
 
 
 
-%% MATH
-\RequirePackage{mathtools}
-\RequirePackage{empheq}
-\RequirePackage[amsmath,thmmarks,hyperref,framed,thref]{ntheorem}
-\RequirePackage{amssymb}
-\RequirePackage{stmaryrd}
-
-\RequirePackage{fixmath}
-\RequirePackage{nicefrac}
-%% MATH
-
-
-
-
-
-%%% PAGE SETUP
+%%% PAGE 
 \RequirePackage{import}
 %%%
 
@@ -58,6 +56,8 @@
 \RequirePackage{graphicx}
 \RequirePackage{float}
 \RequirePackage{microtype}
+
+
 %%
 
 %%% DOCUMENT TASKS
@@ -67,50 +67,3 @@
 
 
 
-
-
-%% HEADFOOT
-\RequirePackage{fancyhdr}
-\pagestyle{fancy}
-\setlength{\headheight}{15.2pt}
-\setlength{\headsep}{0.4in}
-\fancyhead{}
-\chead{\Large GRE Review Notes}
-\lhead{\Large\texttt{\today}}
-\rhead{\normalsize\emph{Calculus} }
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0.4pt}
-
-
-%%% FOOTNOTES UNDER FOOTRULE
-\makeatletter
-\renewcommand\footnoterule{%
-  \kern23\p@
-  \hrule\@width\linewidth
-  \kern2.6\p@}
-\makeatother 
-
-%%% ENDHEADER
-
-
-
-%% CLEVERREF AND HYPERREF
-\RequirePackage{cleveref}
-\RequirePackage{url}
-\RequirePackage{hyperref}
-\hypersetup{%
-  	backref,
-	hyperfootnotes=false,
-    colorlinks=true,
-    linkcolor=blue,
-    anchorcolor=black,
-    citecolor=green,
-    linktocpage=true,
-    filecolor=magenta,
-    urlcolor=cyan,
-  	pdftitle={TeXMercenary},
-  	pdfauthor={EmD},
-  	pdfsubject={Mathematics},
-  	pdfkeywords={mathematics,notes},
-}
-%%%
