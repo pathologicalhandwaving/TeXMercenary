@@ -1,0 +1,47 @@
+
+\documentclass[10pt]{article} 
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{tikz}
+\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=.1in]{geometry}
+
+\usepackage{bookman}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+\tikzset{normal lines/.style={ForestGreen, very thin}} 
+\tikzset{margin lines/.style={black!40!blue!60, very thick}} 
+\tikzset{mm lines/.style={gray, ultra thin}} 
+\tikzset{strong lines/.style={dashdotted, ForestGreen, very thick}} 
+\tikzset{master lines/.style={black, very thick}} 
+\tikzset{dashed master lines/.style={loosely dashed, black, very thick}} 
+\tikzset{dashed lines/.style={dashdotted, BlueViolet, thick}}
+
+\node at (current page.south west){
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \draw[style=margin lines] (0in,1.5in) node[below right] {\textbf{\textcolor{BlueViolet}{Summary}}} --(7.5in,1.5in);
+    \draw[style=strong lines] (0in,1.25in) -- (7.5in,1.25in);
+    \draw[style=margin lines] (0in,7.5in) node[below right] {\textbf{\textcolor{BlueViolet}{Keywords}}} --node[above] {\large \textbf{\textcolor{BlueViolet}{Notes}}} (7.5in,7.5in);
+    \draw[style=margin lines] (1.5in,1.5in) --(1.5in,7.5in);
+    \draw[style=strong lines] (0in,7.75in) -- (7.0in,7.75in);
+    \draw[style=strong lines] (0in,7.25in) -- (7.0in,7.25in);
+    \node[right] at (0in,8.35in) {\scriptsize \textbf{\textcolor{BlueViolet}{Date:}}} -- (0in,8.35in);
+    \node[right] at (0in,8.1in) {\scriptsize \textbf{\textcolor{BlueViolet}{Topic:}}} -- (0in,8.1in);
+    \node[right] at (0in,1.1in) {\scriptsize \textbf{\textcolor{BlueViolet}{Problem Statement:}}} -- (0in,1.1in);
+    \node[right] at (0in,0.75in) {\scriptsize \textbf{\textcolor{BlueViolet}{Main Idea:}}} -- (0in,0.75in);
+    \node[right] at (0in,0.4in) {\scriptsize \textbf{\textcolor{BlueViolet}{Next Up:}}} -- (0in,0.4in);
+
+    \draw[style=normal lines,step=0.25in] (1.5in,1.5in) grid (5.5in,7.5in);
+
+  \end{tikzpicture}
+};
+\end{tikzpicture}
+
+
+
+\end{document}
