@@ -1,0 +1,160 @@
+\documentclass[%
+    BCOR=2cm,%  Space for hole puncher
+    DIV=25,%    Size of textbody
+    10pt%       Fontsize
+]{scrbook}
+%
+%%%%%%%%%% PACKAGES %%%%%%%%%%
+%
+\usepackage{tabularx,booktabs,multirow}
+%
+%%%%%%%%%% COUNTER %%%%%%%%%%
+%
+\newcount\counter
+\newcount\startdate
+\newcount\starttime
+\newcount\stoptime
+\newcount\sundaybegin
+\newcount\week
+%
+%%%%%%%%%% CUSTOMISATIONS %%%%%%%%%%
+%
+%% Month
+\renewcommand{\month}{July}
+%% Date to start the week with
+\startdate=06
+%% Morning starttime
+\starttime=6
+%% Evening time
+\stoptime=24
+%% Starttime sunday
+% Min \starttime+1
+% Max \stoptime-2
+\sundaybegin=14
+%% Weeknumber
+\week=27
+%% Rule width thick
+\newcommand{\rulew}{.15em}
+%% Extra space
+%\setlength{\extrarowheight}{1pt}
+%
+%%%%%%%%%% DEFINITIONS %%%%%%%%%%
+%
+\newcommand{\lendt}{\cmidrule[\rulew](l){1-2}\cmidrule[\rulew](l){3-4}\cmidrule[\rulew](l){5-6}}
+\newcommand{\lend}{\cmidrule(l){1-2}\cmidrule(l){3-4}\cmidrule(l){5-6}}
+\newcommand{\lsun}{\cmidrule(l){1-2}\cmidrule(l){3-4}}
+\newcommand{\lsunt}{\cmidrule(l){1-2}\cmidrule(l){3-4}\cmidrule[\rulew](l){5-6}}
+\newcommand{\printday}[2]{{\LARGE \textbf{#1}}\,\, \large \textbf{#2}}
+\newcommand{\neutralline}{& & & & &}
+\newcommand{\footer}{\centering\rule{7cm}{\cmidrulewidth} \raisebox{-0.5ex}{KMS} \rule{7cm}{\cmidrulewidth}}
+\newcommand{\printmonth}{{\LARGE \textbf{\month}}}
+%
+%%%%%%%%%% TABLE CONTENT LEFT SIDE %%%%%%%%%%
+%
+% Correction due to \global\advance
+\advance\startdate-6
+%
+\advance\stoptime1
+\long\def\addto#1#2{\expandafter\def\expandafter#1\expandafter{#1#2}}
+%
+\def\tabledataleft{} \counter=\the\starttime
+\loop
+    \edef\tabline{\the\counter &  & \the\counter & & \the\counter & }
+    \expandafter\addto\expandafter\tabledataleft\expandafter{\neutralline \\\lend}
+    \expandafter\addto\expandafter\tabledataleft\expandafter{\tabline \\\lend}
+    \advance \counter 1
+    \ifnum \counter<\the\stoptime
+\repeat 
+%
+%%%%%%%%%% TABLE CONTENT RIGHT SIDE %%%%%%%%%%
+%
+\def\tabledatarightupper{} \counter=\the\starttime
+\loop
+    \edef\tabline{\the\counter &  & \the\counter & & & }
+    \expandafter\addto\expandafter\tabledatarightupper\expandafter{\neutralline \\\lend}
+    \expandafter\addto\expandafter\tabledatarightupper\expandafter{\tabline \\\lend}
+    \advance \counter 1
+    \ifnum \counter<\the\sundaybegin
+\repeat 
+%
+\advance\sundaybegin1
+\def\tabledatarightinter{} \counter=\the\sundaybegin
+\newcount\sundaystop
+\sundaystop=\the\sundaybegin
+\advance\sundaystop1
+\loop
+    \edef\tabline{\the\counter &  & \the\counter & & & }
+    \expandafter\addto\expandafter\tabledatarightinter\expandafter{\neutralline \\\lsun}
+    \expandafter\addto\expandafter\tabledatarightinter\expandafter{\tabline \\\lsun}
+    \advance \counter 1
+    \ifnum \counter<\the\sundaystop
+\repeat 
+\advance\sundaybegin-1
+\advance\sundaystop1
+%
+\def\tabledatarightlower{} \counter=\the\sundaystop
+\loop
+    \edef\tabline{\the\counter &  & \the\counter & & & }
+    \expandafter\addto\expandafter\tabledatarightlower\expandafter{\neutralline \\\lend}
+    \expandafter\addto\expandafter\tabledatarightlower\expandafter{\tabline \\\lend}
+    \advance \counter 1
+    \ifnum \counter<\the\stoptime
+\repeat 
+\advance\sundaystop-1
+%
+\begin{document}
+%
+%% Empty page to start left
+\thispagestyle{empty}
+\mbox{}
+\clearpage
+%
+\pagestyle{empty}
+\enlargethispage{1cm}
+%
+%%%%%%%%%% LEFT TABLE %%%%%%%%%%
+%
+\noindent
+\begin{tabularx}{\linewidth}{lXlXlX}
+    \multicolumn{6}{l}{\printmonth \hfill Week \the\week}\\[.2em]\midrule[\rulew]
+    \addlinespace[.5em]
+    \multicolumn{2}{l}{\printday{\the\startdate}{Monday}} \global\advance\startdate 1\relax &%
+    \multicolumn{2}{l}{\printday{\the\startdate}{Tuesday}} \global\advance\startdate 1\relax &%
+    \multicolumn{2}{l}{\printday{\the\startdate}{Wednesday}}\global\advance\startdate 1\relax \\[2cm]
+     & & & & & \\\lendt
+    \tabledataleft
+     & & & & & \\\lendt
+\end{tabularx}
+%
+\vfill
+\footer
+%
+\clearpage
+\enlargethispage{1cm}
+% Correction due to \global\advance
+\advance\startdate-6
+%
+%%%%%%%%%% RIGHT TABLE %%%%%%%%%%
+%
+\noindent
+\begin{tabularx}{\linewidth}{lXlXlX}
+    \multicolumn{6}{l}{Week \the\week \hfill \printmonth}\\[.2em]\midrule[\rulew]
+    \addlinespace[.5em]
+    \multicolumn{2}{l}{\printday{\the\startdate}{Thursday}} \global\advance\startdate 1\relax &%
+    \multicolumn{2}{l}{\printday{\the\startdate}{Friday}}   \global\advance\startdate 1\relax &%
+    \multicolumn{2}{l}{\printday{\the\startdate}{Saturday}} \global\advance\startdate 1\relax \\[2cm]
+    & & & & & \\\lendt
+    \tabledatarightupper
+    & & & & & \\\lsunt
+    \addlinespace[-.15em]
+    \the\sundaybegin & & \the\sundaybegin & & \multicolumn{2}{l}{\multirow{4}{*}[1.5em]{\printday{\the\startdate}{Sunday}}}\\\lsun
+    \tabledatarightinter
+    & & & & & \\\lsun
+    \the\sundaystop & & \the\sundaystop & & & \\\lsunt
+    \tabledatarightlower
+    & & & & & \\\lendt
+\end{tabularx}
+%
+\vfill
+\footer
+\end{document}

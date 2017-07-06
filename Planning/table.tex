@@ -1,0 +1,49 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper, landscape, margin = 0.1in]{geometry}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{fontawesome}
+\usepackage{multirow}
+\usepackage{array}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage{ae}
+\pagenumbering{gobble}
+
+\newcommand{\someline}{$\rule{4.12in}{0.07pt}$\vspace{5pt}} % Left page, timed lines
+\newcommand{\somelinee}{$\rule{4.32in}{0.07pt}$\vspace{5pt}} % Left page, top, two lines
+\newcommand{\somelineee}{\qquad $\rule{4.3in}{0.07pt}$\vspace{5pt}} % Right page, Upper chunk of lines
+\newcommand{\somelineeee}{$\qquad \rule{2in}{0.07pt}$\vspace{5pt}} % Right page, lower chunk of lines (2 columns)
+
+\begin{document}
+\begin{table}
+\begin{tabular*}{@{}m{4.6in}m{0.8in}@{}m{4.6in}@{}m{500pt}@{}m{\extracolsep{\fill}}}
+ \\ \vspace{5pt} \\ \Large Monday \\ \vspace{05pt}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\raisebox{-.5 \height}{{\scriptsize 6}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 7}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 8}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 9}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 10}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 11}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 12}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 1}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 2}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 3}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 4}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 5}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 6}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 7}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 8}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 9}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 10}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 11}{\tiny \,AM }} & \\ \hline
+\raisebox{-.5 \height}{{\scriptsize 12}{\tiny \,AM }} & \\ \hline
+
+\end{tabular}
+\end{tabular*}\vspace{05pt}
+\end{table}
+
+\end{document}
