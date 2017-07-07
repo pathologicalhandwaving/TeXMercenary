@@ -1,0 +1,33 @@
+\documentclass[parskip]{scrartcl}
+\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=.25in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usepackage{mathabx}
+\newcommand{\checkbox}{\ensuremath{\bigboxvoid}}
+
+\begin{document}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\begin{center}
+\begin{tikzpicture}
+    \matrix (magic) [matrix of nodes,nodes={minimum width=2cm,minimum height=1cm,draw,very thin},draw,inner sep=0]
+    {   
+    06:00 AM & \checkbox & Last Snooze \\
+	06:05 AM & \checkbox & Make Coffee \\
+	06:10 AM & \checkbox & Get Dressed \\
+	06:13 AM & \checkbox & Take Meds \\
+	06:15 AM & \checkbox & Brush Teeth \\
+	06:20 AM & \checkbox & Walk Dog \\
+	06:35 AM & \checkbox & Coffee Time \\
+	06:40 AM & \checkbox & Check Weather \\
+	06:50 AM & \checkbox & Review Schedule \\
+	07:00 AM & \checkbox & Wash Face \\
+	07:10 AM & \checkbox & Makeup and Hair \\
+	07:40 AM & \checkbox & Pack Bag \\
+	07:45 AM & \checkbox & Take Mom to Work \\
+    };
+\end{tikzpicture}
+\end{center}
+\end{document}
