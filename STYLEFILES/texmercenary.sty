@@ -1,12 +1,12 @@
-%%% TeXMercenary
-%%% A Modular LaTeX Package
-%%% for the Everyday uses of Math People
+%%% TeXMerc
+%%% TeXMercenary - A Modular LaTeX Package
+%%% for Everyday Usage
 %%% -----------------------------
 %%% Author:     PathologicalHandwaving
 %%% URL:        https://github.com/pathologicalhandwaving/texmercenary
 %%% License:    WTFPL
-%%% Date:       2017-06-30
-%%% Version:    1.5.7
+%%% Date:       2019-05-11
+%%% Version:    2.0.1
 %%% -----------------------------
 
 
@@ -18,6 +18,7 @@
 %%% ENCODING and FONTS
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+\RequirePackage{concmath}
 \RequirePackage{fontawesome}
 \RequirePackage{stmaryrd} 			%% For the lightning
 
@@ -34,11 +35,15 @@
 
 
 %%% SUBPACKAGES
-\RequirePackage{decapitated} 		%% HEADER & FOOTER
-%\RequirePackage{redundancy} 		%% IN DEVELOPMENT DO NOT LOAD%% VERSIONING SUPPORT
-\RequirePackage{norbert} 			%% MATH SUBPACKAGE
-\RequirePackage{hyperactive} 		%% MUST LOAD LAST!!!
-%%% -----------------------------
+\RequirePackage{decapitated} 		%
+% HEADER & FOOTER
+%\RequirePackage{redundancy} 		
+%% IN DEVELOPMENT DO NOT LOAD
+%% Git VERSIONING SUPPORT
+\RequirePackage{norbert} 			
+%% MATH Macros
+
+
 
 
 
@@ -56,14 +61,16 @@
 \RequirePackage{graphicx}
 \RequirePackage{float}
 \RequirePackage{microtype}
+%\RequirePackage{wraptex}
+%\RequirePackage{caption}
 
 
-%%
-
-%%% DOCUMENT TASKS
+%%% TODOs
 \RequirePackage[colorinlistoftodos]{todonotes}
-%%%
 
 
 
+\RequirePackage{hyperactive} 		
+%% MUST LOAD LAST!!!
 
+%%% -----------------------------

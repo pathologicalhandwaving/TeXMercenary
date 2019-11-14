@@ -1,14 +1,12 @@
 \ProvidesPackage{norbert}
 
-%% MATH
+%% Load Packages
 %\RequirePackage{mathtools}
 %\RequirePackage[ntheorem]{empheq}
 \RequirePackage[standard]{ntheorem}
 
 \RequirePackage{fixmath}
 \RequirePackage{nicefrac}
-%% MATH
-
 
 
 
@@ -24,7 +22,7 @@
 
 
 
-%%% ntheorem MACROS
+%%% ntheorem environment MACROS
 
 % theorem
 \theoremstyle{marginbreak}
@@ -75,7 +73,6 @@
 \theoremseparator{.}
 \newtheorem{assertion}{Assertion}
 
-
 % definition
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
@@ -88,98 +85,121 @@
 \theoremseparator{.}
 \newtheorem{condition}{Condition}
 
+% question 
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{question}{Question}
 
+% axiom 
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{axiom}{Axiom}
 
+% property
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{property}{Property}
 
+% assumption 
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theorembodyfont{\slshape}
 \theoremseparator{.}
 \newtheorem{assumption}{Assumption}
 
+% hypothesis 
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theorembodyfont{\slshape}
 \theoremseparator{.}
 \newtheorem{hypothesis}{Hypothesis}
 
+% algorithm 
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{algorithm}{Algorithm}
 
+% problem
 \theoremstyle{marginbreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theorembodyfont{\slshape}
 \theoremseparator{.}
 \newtheorem{problem}{Problem}
 
+% exercise 
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Exercise}
+
+% example
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{example}{Example}
 
+% application 
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
-\newtheorem{exercise}{Exercise}
+\newtheorem{exercise}{Application}
 
+% remark
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{remark}{Remark}
 
+% notation
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theorembodyfont{\slshape}
 \theoremseparator{.}
 \newtheorem{notation}{Notation}
 
+% note
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\sc\bfseries}
 \theorembodyfont{\slshape}
 \theoremseparator{:}
 \newtheorem{note}{Note}
 
+% claim
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{claim}{Claim}
 
+% summary
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{summary}{Summary}
 
+% acknowledgement 
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{acknowledgement}{Acknowledgement}
 
-
+% case
 \theoremstyle{marginbreak}
 \theoremindent0.5cm
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{case}{Case}
 
+% conclusion 
 \theoremstyle{changebreak}
 \theoremheaderfont{\normalfont\bfseries}
 \theoremseparator{.}
 \newtheorem{conclusion}{Conclusion}
 
+% solution 
 \theoremstyle{nonumberbreak}
 \theoremsymbol{\ensuremath{\circledcirc}}
 \theoremindent0.5cm
@@ -188,7 +208,31 @@
 \theoremseparator{.}
 \newtheorem{solution}{Solution}
 
+% Intuition 
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Intuition}
 
+% misconception 
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Misconception}
+
+% law
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Law}
+
+% principle 
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Principle}
+
+% pst
 \theoremstyle{marginbreak}
 \theoremsymbol{\ensuremath{\dagger}}
 \theoremheaderfont{\bfseries}
@@ -196,18 +240,28 @@
 \theoremseparator{!}
 \newtheorem*{pst}{PST}
 
-
-
+% proof
 \theoremheaderfont{\sc\bfseries}\theorembodyfont{\slshape} \theoremstyle{nonumberbreak}
 \theoremseparator{.}
 \theoremsymbol{\rule{1ex}{1ex}}
 \newtheorem{proof}{Proof}
 
+% caution
+\theoremstyle{changebreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremseparator{.}
+\newtheorem{example}{Caution}
+
+
+
 %%% OTHER MACROS
 
+% is it equal?
 \newcommand{\isit}{\stackrel{?}{=}}
 
+% sequence 
 \newcommand{\aseq}[1]{\ensuremath{a_{1}r^{1},a_{1}r^{2},\ldots,a_{1}r^{#1-1}, a_{1}r^{#1}}}
 
+% contradiction reached 
 \newcommand{\contra}{\ensuremath{\lightning}}
 
